@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">icamp</string>
+    <string name="apiKey">3I-Dj5d07Prh1AprHaS_UpmfD5MghRxv</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

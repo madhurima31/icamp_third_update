@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:id="@+id/company_card"
+    android:background="@color/white"
+    android:padding="@dimen/bytes"
+    android:layout_margin="@dimen/bytes"
+    android:elevation="@dimen/elevation"
+   >
+
+
+    <TextView
+        android:id="@+id/company_id"
+        android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="id"/>
+
+    <TextView
+        android:id="@+id/company_name"
+        android:layout_weight="0.2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="name"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:text="bookmark"
+        android:id="@+id/bookmark"
+
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

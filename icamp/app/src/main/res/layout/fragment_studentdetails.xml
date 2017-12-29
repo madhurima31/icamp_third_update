@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/st_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name"
+        android:textColor="@color/grey"
+        android:textSize="@dimen/large"
+        android:textStyle="bold"
+        android:padding="@dimen/bytes"
+        android:gravity="center"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/bytes">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_margin="@dimen/bytes"
+                android:padding="@dimen/bytes"
+                android:elevation="@dimen/elevation">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Personal Info"
+                    android:textSize="@dimen/medium"
+                    android:textStyle="bold"
+                    android:padding="@dimen/nibbles"
+                    android:gravity="center" />
+                <TextView
+                    android:id="@+id/st_id"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_st_id"
+                    android:hint="   ID"
+                    android:padding="@dimen/nibbles"/>
+                <TextView
+                    android:id="@+id/st_gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_st_gender"
+                    android:hint="   Gender"
+                    android:padding="@dimen/nibbles"/>
+                <TextView
+                    android:id="@+id/st_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_st_email"
+                    android:hint="   Email"
+                    android:padding="@dimen/nibbles"/>
+                <TextView
+                    android:id="@+id/st_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_st_mobile"
+                    android:hint="   Mobile"
+                    android:padding="@dimen/nibbles"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:layout_margin="@dimen/bytes"
+                android:padding="@dimen/bytes"
+                android:elevation="@dimen/elevation">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="College Info"
+                    android:textSize="@dimen/medium"
+                    android:textStyle="bold"
+                    android:padding="@dimen/nibbles"
+                    android:gravity="center" />
+                <TextView
+                    android:id="@+id/st_college"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_st_college"
+                    android:hint="   College"
+                    android:padding="@dimen/nibbles" />
+                <TextView
+                    android:id="@+id/st_branch"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_st_branch"
+                    android:hint="   Branch"
+                    android:padding="@dimen/nibbles"/>
+                <TextView
+                    android:id="@+id/st_roll"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_st_roll"
+                    android:hint="   Roll No."
+                    android:padding="@dimen/nibbles"/>
+                <TextView
+                    android:id="@+id/st_year"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_st_year"
+                    android:hint="   Year"
+                    android:padding="@dimen/nibbles"/>
+                <TextView
+                    android:id="@+id/st_graduate"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@drawable/ic_st_graduate"
+                    android:hint="   Graduate"
+                    android:padding="@dimen/nibbles"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#fff"
+                android:layout_margin="@dimen/bytes"
+                android:padding="@dimen/bytes"
+                android:elevation="@dimen/elevation">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="My Skills"
+                    android:textSize="@dimen/medium"
+                    android:textStyle="bold"
+                    android:padding="@dimen/nibbles"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Add Your Skills and Resume"
+                    android:padding="@dimen/nibbles"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="#fff"
+                android:layout_margin="@dimen/bytes"
+                android:padding="@dimen/bytes"
+                android:elevation="@dimen/elevation">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Selected Companies"
+                    android:textSize="@dimen/medium"
+                    android:textStyle="bold"
+                    android:padding="@dimen/nibbles"
+                    android:gravity="center" />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Add Your Favourite Companies"
+                    android:padding="@dimen/nibbles"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/st_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Logout"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

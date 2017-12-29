@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/bytes">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Statistics"
+        android:textSize="@dimen/large"
+        android:textStyle="bold"
+        android:padding="@dimen/bytes"
+        android:gravity="center"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_margin="@dimen/bytes"
+        android:padding="@dimen/bytes"
+        android:elevation="@dimen/elevation">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Students Info"
+            android:textSize="@dimen/medium"
+            android:textStyle="bold"
+            android:padding="@dimen/nibbles"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/st_registered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Registered : 0"
+            android:padding="@dimen/nibbles"/>
+        <TextView
+            android:id="@+id/st_converted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Conversion : 0"
+            android:padding="@dimen/nibbles"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:layout_margin="@dimen/bytes"
+        android:padding="@dimen/bytes"
+        android:elevation="@dimen/elevation">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Companies Info"
+            android:textSize="@dimen/medium"
+            android:textStyle="bold"
+            android:padding="@dimen/nibbles"
+            android:gravity="center" />
+        <TextView
+            android:id="@+id/co_registered"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Registered : 0"
+            android:padding="@dimen/nibbles"/>
+        <TextView
+            android:id="@+id/co_converted"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Conversion : 0"
+            android:padding="@dimen/nibbles"/>
+    </LinearLayout>
+
+</LinearLayout>

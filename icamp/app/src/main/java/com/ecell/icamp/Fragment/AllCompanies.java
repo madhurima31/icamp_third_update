@@ -44,6 +44,7 @@ import retrofit2.Response;
 public class AllCompanies extends Fragment {
     private TextView title, st_registered;
     private List<String> li_id, li_name;
+    private List<String>li_skillset,li_duration,li_stipend,li_location;
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter adapter;
@@ -107,6 +108,12 @@ public class AllCompanies extends Fragment {
                 List<Document> lists = (List<Document>)collection.find().into(new ArrayList<Document>());
                 li_name = new ArrayList<>();
                 li_id = new ArrayList<>();
+                li_skillset = new ArrayList<>();
+                li_duration = new ArrayList<>();
+                li_stipend = new ArrayList<>();
+                li_location = new ArrayList<>();
+
+
                 for(Document document : lists){
 
 
@@ -115,15 +122,23 @@ public class AllCompanies extends Fragment {
 
                     String name=jsonObject.getString("name");
                     String id=jsonObject.getString("id");
+                    String skillset=jsonObject.getString("skillset");
+                    String duration=jsonObject.getString("duration");
+                    String stipend=jsonObject.getString("stipend");
+                    String location=jsonObject.getString("location");
 
 
                     Log.i("hogabe", id);
                     li_name.add(name);
                     li_id.add(id);
+                    li_location.add(location);
+                    li_stipend.add(stipend);
+                    li_duration.add(duration);
+                    li_skillset.add(skillset);
 
 
                 }
-                adapter = new Company_Adapter(li_id, li_name);
+                adapter = new Company_Adapter(li_id, li_name, li_duration,li_skillset,li_location,li_stipend);
                 recyclerView.setAdapter(adapter);
             }
 

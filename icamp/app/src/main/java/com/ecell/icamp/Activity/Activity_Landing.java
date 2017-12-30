@@ -33,7 +33,7 @@ public class Activity_Landing extends Activity {
         company.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(getBaseContext(), Dashboard_Company.class);
+                Intent intent = new Intent(getBaseContext(), Company_login.class);
                 startActivity(intent);
             }
         });

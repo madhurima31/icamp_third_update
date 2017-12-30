@@ -12,18 +12,58 @@
 
 
     <TextView
-        android:id="@+id/company_id"
-        android:layout_weight="0.2"
+        android:id="@+id/co_skillset"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="id"/>
+        android:text="UI/UX DESIGNER"
+        android:layout_marginLeft="5dp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:textSize="15dp"/>
 
     <TextView
         android:id="@+id/company_name"
-        android:layout_weight="0.2"
+        android:layout_marginLeft="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="name"/>
+        android:textColor="@color/blue_light"
+        android:layout_marginTop="3dp"
+        android:layout_marginBottom="3dp"
+        android:text="name"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0.4"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/co_location"
+
+            android:text="bhubaneswar"
+            android:textSize="15dp"
+            android:layout_marginBottom="3dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/co_stipend"
+
+            android:text=" 20000"
+            android:textSize="15dp"
+            android:layout_marginBottom="5dp"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/co_duration"
+            android:text="2 months"
+            android:textSize="15dp" />
+
+    </LinearLayout>
+
+
 
     <Button
         android:layout_width="wrap_content"

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.widget.LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ecell.icamp.Activity.Company_login">
+    <ImageView
+        android:layout_width="125dp"
+        android:layout_height="125dp"
+        android:src="@drawable/ic_launcher_background"
+        android:padding="@dimen/bytes"
+        android:id="@+id/icon"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/big" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/white"
+        android:elevation="2dp"
+        android:padding="@dimen/medium"
+        android:layout_margin="@dimen/big"
+        android:layout_centerInParent="true">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="LOGIN"
+            android:textSize="25dp"
+            android:textColor="@color/blue_light"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:padding="10dp"
+            android:id="@+id/textView" />
+
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/company_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile"
+                android:padding="@dimen/bytes"
+                android:layout_margin="@dimen/nibbles" />
+        </android.support.design.widget.TextInputLayout>
+        <android.support.design.widget.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/company_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:padding="@dimen/bytes"
+                android:layout_margin="@dimen/nibbles"
+                android:inputType="textPassword"/>
+        </android.support.design.widget.TextInputLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="1">
+            <Button
+                android:id="@+id/login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="LOGIN"
+                android:textColor="@color/blue_light"
+                android:background="@color/white"
+                android:layout_gravity="center"
+                android:padding="@dimen/bytes"
+                android:layout_margin="@dimen/nibbles" />
+            <Button
+                android:id="@+id/register"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:text="REGISTER"
+                android:textColor="@color/blue_light"
+                android:background="@color/white"
+                android:layout_gravity="center"
+                android:padding="@dimen/bytes"
+                android:layout_margin="@dimen/nibbles" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="forgot password ?"
+            android:padding="@dimen/nibbles"
+            android:layout_margin="@dimen/nibbles"
+            android:layout_gravity="center"
+            android:clickable="true"/>
+
+    </LinearLayout>
+
+</android.widget.LinearLayout>

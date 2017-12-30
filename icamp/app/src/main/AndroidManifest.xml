@@ -24,10 +24,8 @@
         <activity android:name=".Activity.Dashboard_Admin" />
         <activity android:name=".Activity.Student_Register" />
         <activity android:name=".Activity.Company_Register" />
-        <activity android:name=".Activity.TestingMongoDriver">
-
-
-        </activity>
+        <activity android:name=".Activity.TestingMongoDriver"></activity>
+        <activity android:name=".Activity.Company_login"></activity>
     </application>
 
 </manifest>

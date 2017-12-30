@@ -1,7 +1,9 @@
 package com.ecell.icamp.Activity;
 
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -12,6 +14,12 @@ import com.ecell.icamp.Model.Student_Profile;
 import com.ecell.icamp.R;
 import com.ecell.icamp.RestApi.Resi_Api;
 import com.ecell.icamp.RestApi.Service_Generator;
+import com.mongodb.MongoClient;
+import com.mongodb.MongoCredential;
+import com.mongodb.client.MongoCollection;
+import com.mongodb.client.MongoDatabase;
+
+import org.bson.Document;
 
 import java.util.Random;
 
@@ -23,6 +31,11 @@ public class Student_Register extends AppCompatActivity {
 
     private EditText st_name, st_gender, st_email, st_mobile, st_college, st_branch, st_roll, st_year, st_graduate;
     private Button send;
+
+    private MongoClient mongo;
+    private MongoDatabase database;
+    private MongoCollection<Document> collection;
+    private MongoCredential credential;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,37 +56,67 @@ public class Student_Register extends AppCompatActivity {
         send.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View view) {
-              send();
+              mongo = new MongoClient("ecell.org.in", 27017);
+              new connection().execute();
+
           }
       });
     }
+    public  class connection extends AsyncTask<String , Void, String> {
 
-    private void send() {
-        Student_Profile student_profile = new Student_Profile();
-        student_profile.setId(""+(new Random().nextInt(8999)+1000));
-        student_profile.setName(st_name.getText().toString());
-        student_profile.setGender(st_gender.getText().toString());
-        student_profile.setEmail(st_email.getText().toString());
-        student_profile.setMobile(st_mobile.getText().toString());
-        student_profile.setCollege(st_college.getText().toString());
-        student_profile.setBranch(st_branch.getText().toString());
-        student_profile.setRoll(st_roll.getText().toString());
-        student_profile.setYear(st_year.getText().toString());
-        student_profile.setGraduate(st_graduate.getText().toString());
+        @Override
+        protected String doInBackground(String... strings) {
+            try {
+                credential = MongoCredential.createCredential("admin", "esummit_18", "techies".toCharArray());
+                Log.i("constatus", "Connected");
 
-        Resi_Api client = Service_Generator.createService(Resi_Api.class);
-        Call<Response_Api> call = client.postStudentDetails(student_profile);
-        call.enqueue(new Callback<Response_Api>() {
-            @Override
-            public void onResponse(Call<Response_Api> call, Response<Response_Api> response) {
-                if (response.code() == 200) {
-                    Response_Api oauthResponse = response.body();
-                }
+                database = mongo.getDatabase("esummit_18");
+
+                Log.i("databaseName", "DBName = " + database.getName().toString());
+
+                collection = database.getCollection("students");
+
+                Long tsLong = System.currentTimeMillis()/1000;
+                String ts = tsLong.toString();
+
+                Document document = new Document("id", ts+""+(new Random().nextInt(8999)+1000))
+                        .append("email", st_email.getText().toString())
+                        .append("phone", st_mobile.getText().toString())
+                   //     .append("password", co_password.getText().toString())
+                        .append("gender",st_gender.getText().toString())
+                        .append("name", st_name.getText().toString())
+                        .append("branch",st_branch.getText().toString())
+                        .append("roll", st_roll.getText().toString())
+                        .append("year",st_year.getText().toString())
+                        .append("graduate",st_graduate.getText().toString());
+
+                collection.insertOne(document);
+                Toast.makeText(Student_Register.this,"Successfully registered",Toast.LENGTH_SHORT).show();
+                Log.i("checkingregistered","success");
+
+
+
             }
-            @Override
-            public void onFailure(Call<Response_Api> call, Throwable throwable) {
-                Toast.makeText(getBaseContext(), "No Internet Connection, please check your internet connection ", Toast.LENGTH_LONG).show();
+
+            catch (Exception e){
+                e.printStackTrace();
             }
-        });
+
+            return null;
+        }
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+
+        }
     }
+
+
 }

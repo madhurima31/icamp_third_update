@@ -3,17 +3,38 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-
     <EditText
         android:id="@+id/co_name"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="company name"/>
     <EditText
+        android:id="@+id/co_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="email"/>
+
+    <EditText
+        android:id="@+id/co_phone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="phone no"/>
+    <EditText
+        android:id="@+id/co_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="password"/>
+    <EditText
         android:id="@+id/co_location"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="location"/>
+
+    <EditText
+        android:id="@+id/co_skillset"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="skillset"/>
     <EditText
         android:id="@+id/co_duration"
         android:layout_width="match_parent"
@@ -27,7 +48,7 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send"
+        android:text="Register"
         android:id="@+id/send"/>
 
 </android.widget.LinearLayout>

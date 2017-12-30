@@ -30,24 +30,31 @@ import retrofit2.Response;
 public class Company_Adapter extends RecyclerView.Adapter<Company_Adapter.ViewHolder> {
 
     private LinearLayout co_card;
-    private TextView co_id, co_name;
+    private TextView co_skillset, co_name, co_duration,co_stipend,co_location;
     private Button co_bookmark;
-    private List<String> li_id, li_name;
+    private List<String> li_id,li_skillset, li_name,li_duration,li_stipend,li_location;
 
     public class ViewHolder extends RecyclerView.ViewHolder {
 
         public ViewHolder(View view) {
             super(view);
             co_card = (LinearLayout)view.findViewById(R.id.company_card);
-            co_id = (TextView)view.findViewById(R.id.company_id);
+            co_skillset = (TextView)view.findViewById(R.id.co_skillset);
             co_name = (TextView)view.findViewById(R.id.company_name);
+            co_location = (TextView) view.findViewById(R.id.co_location);
+            co_duration = (TextView)view.findViewById(R.id.co_duration);
+            co_stipend = (TextView)view.findViewById(R.id.co_stipend);
             co_bookmark = (Button)view.findViewById(R.id.bookmark);
         }
     }
 
-    public Company_Adapter(List<String> li_id, List<String> li_name) {
+    public Company_Adapter(List<String> li_id, List<String> li_name, List<String>li_duration,List<String> li_skillset, List<String> li_location, List<String>li_stipend) {
         this.li_id = li_id;
         this.li_name = li_name;
+        this.li_skillset = li_skillset;
+        this.li_stipend = li_stipend;
+        this.li_duration = li_duration;
+        this.li_location = li_location;
     }
 
     @Override
@@ -60,8 +67,11 @@ public class Company_Adapter extends RecyclerView.Adapter<Company_Adapter.ViewHo
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
-        co_id.setText(li_id.get(position));
+        co_skillset.setText(li_skillset.get(position));
         co_name.setText(li_name.get(position));
+        co_location.setText(li_location.get(position));
+        co_stipend.setText(li_stipend.get(position));
+        co_duration.setText(li_duration.get(position));
 
 
         co_bookmark.setOnClickListener(new View.OnClickListener() {

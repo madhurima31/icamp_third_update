@@ -86,7 +86,6 @@ public class Company_ListDetails extends Fragment implements TabHost.OnTabChange
         List<Fragment> fragments = new Vector<Fragment>();
 
         fragments.add(new AllCompanies());
-        fragments.add(new Bookmarks());
         fragments.add(new Selected());
 
 
@@ -104,19 +103,19 @@ public class Company_ListDetails extends Fragment implements TabHost.OnTabChange
         tabHost.setup();
 
         TabHost.TabSpec tabSpec;
-        tabSpec = tabHost.newTabSpec("All");
+        tabSpec = tabHost.newTabSpec("All Companies");
 
-        tabSpec.setIndicator("All");
+        tabSpec.setIndicator("All Companies");
         tabSpec.setContent(new FakeContent(getActivity()));
         tabHost.addTab(tabSpec);
 
-        tabSpec = tabHost.newTabSpec("Bookmark");
-        tabSpec.setIndicator("Bookmark");
-        tabSpec.setContent(new FakeContent(getActivity()));
-        tabHost.addTab(tabSpec);
+//        tabSpec = tabHost.newTabSpec("Bookmark");
+//        tabSpec.setIndicator("Bookmark");
+//        tabSpec.setContent(new FakeContent(getActivity()));
+//        tabHost.addTab(tabSpec);
 
-        tabSpec = tabHost.newTabSpec("Selected");
-        tabSpec.setIndicator("Selected");
+        tabSpec = tabHost.newTabSpec("Selected Companies");
+        tabSpec.setIndicator("Selected Companies");
         tabSpec.setContent(new FakeContent(getActivity()));
         tabHost.addTab(tabSpec);
 

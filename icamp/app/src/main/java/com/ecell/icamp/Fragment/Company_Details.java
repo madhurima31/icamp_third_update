@@ -48,14 +48,14 @@ public class Company_Details extends Fragment {
 
         show();
 
-        co_logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Student_Login.logout();
-                Intent intent = new Intent(getContext(), Activity_Landing.class);
-                startActivity(intent);
-            }
-        });
+//        co_logout.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Student_Login.logout();
+//                Intent intent = new Intent(getContext(), Activity_Landing.class);
+//                startActivity(intent);
+//            }
+//        });
 
         return view;
     }

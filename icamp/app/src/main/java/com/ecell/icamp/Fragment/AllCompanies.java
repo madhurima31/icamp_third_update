@@ -50,6 +50,15 @@ public class AllCompanies extends Fragment {
     private RecyclerView.Adapter adapter;
     private RecyclerView.LayoutManager layoutManager;
     Button bookmark;
+    FindIterable<Document> iterDoc;
+    List<Document> lists;
+    JSONObject jsonObject;
+    String name;
+    String id;
+    String skillset;
+    String duration;
+    String stipend;
+    String location;
 
 
     private MongoClient mongo;
@@ -102,10 +111,10 @@ public class AllCompanies extends Fragment {
 
                 collection = database.getCollection("company");
 
-                FindIterable<Document> iterDoc = collection.find();
+                 iterDoc = collection.find();
                 //   FindIterable<Document> iterDoc = collection.find({},{"name":1,id:0});
 
-                List<Document> lists = (List<Document>)collection.find().into(new ArrayList<Document>());
+                 lists = (List<Document>)collection.find().into(new ArrayList<Document>());
                 li_name = new ArrayList<>();
                 li_id = new ArrayList<>();
                 li_skillset = new ArrayList<>();
@@ -118,17 +127,17 @@ public class AllCompanies extends Fragment {
 
 
 
-                    JSONObject jsonObject=new JSONObject(document.toJson());
+                     jsonObject=new JSONObject(document.toJson());
 
-                    String name=jsonObject.getString("name");
-                    String id=jsonObject.getString("id");
-                    String skillset=jsonObject.getString("skillset");
-                    String duration=jsonObject.getString("duration");
-                    String stipend=jsonObject.getString("stipend");
-                    String location=jsonObject.getString("location");
+                    name=jsonObject.getString("name");
+                     id=jsonObject.getString("id");
+                     skillset=jsonObject.getString("skillset");
+                     duration=jsonObject.getString("duration");
+                     stipend=jsonObject.getString("stipend");
+                     location=jsonObject.getString("location");
 
 
-                    Log.i("hogabe", id);
+
                     li_name.add(name);
                     li_id.add(id);
                     li_location.add(location);
@@ -138,8 +147,8 @@ public class AllCompanies extends Fragment {
 
 
                 }
-                adapter = new Company_Adapter(li_id, li_name, li_duration,li_skillset,li_location,li_stipend);
-                recyclerView.setAdapter(adapter);
+                adapter = new Company_Adapter(getContext(),li_id, li_name, li_duration,li_skillset,li_location,li_stipend);
+//                recyclerView.setAdapter(adapter);
             }
 
             catch (Exception e){
@@ -158,39 +167,10 @@ public class AllCompanies extends Fragment {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+            recyclerView.setAdapter(adapter);
             adapter.notifyDataSetChanged();
         }
     }
-//    private void show() {
-//        Resi_Api client = Service_Generator.createService(Resi_Api.class);
-//        Call<ArrayList<Company_Profile>> call = client.getCompanyProfile();
-//        call.enqueue(new Callback<ArrayList<Company_Profile>>() {
-//            @Override
-//            public void onResponse(Call<ArrayList<Company_Profile>> call, Response<ArrayList<Company_Profile>> response) {
-//                if (response.code() == 200) {
-//                    li_id = new ArrayList<>();
-//                    li_name = new ArrayList<>();
-//                    for(Company_Profile company : response.body()) {
-//                        li_id.add(company.getId());
-//                        li_name.add(company.getName());
-//
-//
-//
-//
-//                    }
-//                    adapter = new Company_Adapter(li_id, li_name);
-//                    recyclerView.setAdapter(adapter);
-//
-//
-//
-//                }
-//
-//            }
-//            @Override
-//            public void onFailure(Call<ArrayList<Company_Profile>> call, Throwable throwable) {
-//                Toast.makeText(getContext(), "No Internet Connection, please check your internet connection ", Toast.LENGTH_LONG).show();
-//            }
-//        });
-//    }
+
 
 }

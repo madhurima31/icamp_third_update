@@ -4,6 +4,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center_horizontal">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/error_message"
+        android:layout_marginTop="10dp"/>
 
     <ImageView
         android:layout_width="125dp"
@@ -39,10 +44,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <EditText
-                android:id="@+id/login_username"
+                android:id="@+id/login_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Mobile"
+                android:hint="email"
                 android:padding="@dimen/bytes"
                 android:layout_margin="@dimen/nibbles" />
         </android.support.design.widget.TextInputLayout>

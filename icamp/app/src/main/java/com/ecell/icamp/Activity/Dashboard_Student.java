@@ -43,8 +43,10 @@ public class Dashboard_Student extends AppCompatActivity {
         setContentView(R.layout.activity_dashboard);
 
         Bundle bundle = getIntent().getExtras();
-        indexed = bundle.getString("indexed");
-        index = Integer.parseInt(indexed);
+      //  indexed = bundle.getString("indexed");
+      //  index = Integer.parseInt(indexed);
+
+
         //Toast.makeText(getBaseContext(), ""+indexed, Toast.LENGTH_LONG).show();
 
         mSectionsPagerAdapter = new Dashboard_Student.SectionsPagerAdapter(getSupportFragmentManager());
